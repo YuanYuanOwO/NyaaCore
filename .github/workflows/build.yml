@@ -23,7 +23,7 @@ jobs:
       - name: Configure Git User Details
         run: git config --global user.email "actions@github.com" && git config --global user.name "Github Actions"
       - name: Build
-        run: ./gradlew clean build
+        run: ./gradlew build publish
       - name: Jar
         uses: actions/upload-artifact@v3
         with:
