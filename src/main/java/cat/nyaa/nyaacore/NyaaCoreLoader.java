@@ -24,19 +24,6 @@ public class NyaaCoreLoader extends JavaPlugin {
 
     private boolean isTest = false;
 
-//    public NyaaCoreLoader() {
-//        super();
-//    }
-//
-//    protected NyaaCoreLoader(JavaPluginLoader loader, PluginDescriptionFile description, File dataFolder, File file) {
-//        super(loader, description, dataFolder, file);
-//    }
-//
-//    protected NyaaCoreLoader(JavaPluginLoader loader, PluginDescriptionFile description, File dataFolder, File file, Boolean isTest) {
-//        super(loader, description, dataFolder, file);
-//        this.isTest = isTest;
-//    }
-
     public static NyaaCoreLoader getInstance() {
         return instance;
     }
@@ -51,7 +38,7 @@ public class NyaaCoreLoader extends JavaPlugin {
         if (!isTest) {
             String serverVersion = "", targetVersion;
             try {
-                serverVersion = SharedConstants.getCurrentVersion().getName();
+                serverVersion = Bukkit.getServer().getVersion();
             } catch (Exception e) {
                 getLogger().severe(e.getMessage());
                 Bukkit.getPluginManager().disablePlugin(this);
